@@ -1,0 +1,10 @@
+name: First Workflow
+on: workflow_dispatch
+jobs:
+  first_job: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Greeting
+        run: echo "Hello World $(date +%s)"
+      - name: Goodbye
+        run: echo "Goodbye $(date +%s)"
