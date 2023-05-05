@@ -1,5 +1,9 @@
 name: First Workflow
 on: workflow_dispatch
+
+env:
+  TAG_NAME: my-image:v1
+
 jobs:
   first_job: 
     runs-on: ubuntu-latest
@@ -8,3 +12,6 @@ jobs:
         run: echo "Hello World $(date +%s)"
       - name: Goodbye
         run: echo "Goodbye $(date +%s)"
+      - name: Tag Docker image
+        run: |
+          echo "$TAG_NAME-$(date +%s)"
